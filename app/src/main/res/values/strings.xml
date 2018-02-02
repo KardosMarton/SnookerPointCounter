@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Awesome Snooker Point Counter</string>
+    <string name="Player1">Player One</string>
+    <string name="Player2">Player Two</string>
+    <string name="StatisticPlayerOne">15</string>
+    <string name="StatisticPlayerTwo">99</string>
+    <string name="Statistic">Ball statistic: </string>
+    <string name="DefaultFramePoint">0</string>
+
+    <string name="PlayerOneWin">Player 1 win</string>
+    <string name="PlayerTwoWin">Player 2 win</string>
+    <string name="Undo">Undo</string>
+    <string name="ResetFrame">Reset frame</string>
+    <string name="ResetAll">Reset all</string>
+    <string name="Fault">Fault +1</string>
+    <string name="LeftSeparator">(</string>
+    <string name="RigthSeparator">)</string>
+
+    <string name="content_desc_brownball">Press to add the brown ball value (4) to selected players points</string>
+    <string name="content_desc_yellowball">Press to add the yellow ball value (2) to selected players points</string>
+    <string name="content_desc_blackball">df</string>
+    <string name="content_desc_pinkball">fg</string>
+    <string name="content_desc_greenball">gfgfg</string>
+    <string name="content_desc_blueball">vbvbvb</string>
+    <string name="content_desc_redball">dfdf</string>
+
+</resources>

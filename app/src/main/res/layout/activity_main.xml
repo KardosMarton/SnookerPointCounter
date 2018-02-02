@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.snookerpointcounter.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/txt_playerOne"
+            style="@style/Player1Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/Player1"
+            android:inputType="textCapWords" />
+
+        <RadioGroup
+            android:id="@+id/rg_holdRadioButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rdb_playerOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="5" />
+
+            <RadioButton
+                android:id="@+id/rdb_playerTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="5" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/txt_playerTwo"
+            style="@style/Player2Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/Player2"
+            android:inputType="textCapWords" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_playerOneCurrent"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/txt_playerOneFrameWin"
+            style="@style/FrameWinPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/DefaultFramePoint" />
+
+        <TextView
+            style="@style/Separator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/LeftSeparator" />
+
+        <TextView
+            android:id="@+id/txt_allFrameCounter"
+            style="@style/AllFrameWin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="setAllFrame"
+            android:text="@string/DefaultFramePoint" />
+
+        <TextView
+            style="@style/Separator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/RigthSeparator" />
+
+        <TextView
+            android:id="@+id/txt_playerTwoFrameWin"
+            style="@style/FrameWinPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/DefaultFramePoint" />
+
+        <Button
+            android:id="@+id/btn_playerTwoCurrent"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundWhite">
+
+            <ImageButton
+                android:id="@+id/brown_snookerball"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:background="@drawable/brown_50_snookerball"
+                android:clickable="true"
+                android:contentDescription="@string/content_desc_brownball"
+                android:focusable="true"
+                android:onClick="brownClick" />
+
+            <ImageButton
+                android:id="@+id/yellow_snookerball"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@id/brown_snookerball"
+                android:layout_toStartOf="@id/brown_snookerball"
+                android:background="@drawable/yellow_50_snookerball"
+                android:contentDescription="@string/content_desc_yellowball"
+                android:onClick="yellowClick" />
+
+            <ImageButton
+                android:id="@+id/green_snookerall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@id/brown_snookerball"
+                android:layout_toRightOf="@id/brown_snookerball"
+                android:background="@drawable/green_50_snookerball"
+                android:contentDescription="@string/content_desc_greenball"
+                android:onClick="greenClick" />
+
+            <ImageButton
+                android:id="@+id/blue_snookerball"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brown_snookerball"
+                android:layout_centerInParent="true"
+                android:background="@drawable/blue_46_snookerball"
+                android:contentDescription="@string/content_desc_blueball"
+                android:onClick="blueClick" />
+
+            <ImageButton
+                android:id="@+id/pink_snookerball"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/blue_snookerball"
+                android:layout_centerInParent="true"
+                android:background="@drawable/pink_50_snookerball"
+                android:contentDescription="@string/content_desc_pinkball"
+                android:onClick="pinkClick" />
+
+            <ImageButton
+                android:id="@+id/red_snookerball"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pink_snookerball"
+                android:layout_centerInParent="true"
+                android:background="@drawable/snooker_balls_triangled"
+                android:contentDescription="@string/content_desc_redball"
+                android:onClick="redClick" />
+
+            <ImageButton
+                android:id="@+id/black_snookerball"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/red_snookerball"
+                android:layout_centerInParent="true"
+                android:background="@drawable/black_50_snookerball"
+                android:contentDescription="@string/content_desc_blackball"
+                android:onClick="blackClick" />
+
+
+            <Button
+                android:id="@+id/btn_playerOneFrameWin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/yellow_snookerball"
+                android:onClick="playerOneFrameWin"
+                android:text="@string/PlayerOneWin" />
+
+            <Button
+                android:id="@+id/btn_PlayerTwoFrameWin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/yellow_snookerball"
+                android:onClick="playerTwoFrameWin"
+                android:text="@string/PlayerTwoWin" />
+
+            <Button
+                android:id="@+id/btn_UndoLastAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_PlayerTwoFrameWin"
+                android:layout_marginTop="25dp"
+                android:onClick="undoLastScore"
+                android:text="@string/Undo" />
+
+            <Button
+                android:id="@+id/btn_Fault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_UndoLastAction"
+                android:layout_marginTop="25dp"
+                android:onClick="oneFaultPoint"
+                android:text="@string/Fault" />
+
+
+            <Button
+                android:id="@+id/btn_resetFrame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/btn_PlayerTwoFrameWin"
+                android:layout_marginTop="25dp"
+                android:onClick="resetCurrentFrame"
+                android:text="@string/ResetFrame" />
+
+            <Button
+                android:id="@+id/btn_resetAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/btn_resetFrame"
+                android:layout_marginTop="25dp"
+                android:onClick="resetAllToZero"
+                android:text="@string/ResetAll" />
+
+            <TextView
+                android:id="@+id/txt_statistic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/black_snookerball"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="4dp"
+                android:text="@string/Statistic" />
+
+            <ImageView
+                android:id="@+id/statistic_red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_statistic"
+                android:src="@drawable/red_50_snookerball"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/statistic_yellow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_statistic"
+                android:layout_toEndOf="@id/statistic_red"
+                android:layout_toRightOf="@id/statistic_red"
+                android:src="@drawable/yellow_50_snookerball"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/statistic_brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_statistic"
+                android:layout_toEndOf="@id/statistic_yellow"
+                android:layout_toRightOf="@id/statistic_yellow"
+                android:src="@drawable/brown_50_snookerball"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/statistic_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_statistic"
+                android:layout_toEndOf="@id/statistic_brown"
+                android:layout_toRightOf="@id/statistic_brown"
+                android:src="@drawable/green_50_snookerball"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/statistic_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_statistic"
+                android:layout_toEndOf="@id/statistic_green"
+                android:layout_toRightOf="@id/statistic_green"
+                android:src="@drawable/blue_46_snookerball"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/statistic_pink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_statistic"
+                android:layout_toEndOf="@id/statistic_blue"
+                android:layout_toRightOf="@id/statistic_blue"
+                android:src="@drawable/pink_50_snookerball"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/statistic_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_statistic"
+                android:layout_toEndOf="@id/statistic_pink"
+                android:layout_toRightOf="@id/statistic_pink"
+                android:src="@drawable/black_50_snookerball"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/txt_playerOneRedBallCount"
+                style="@style/StatisticPlayerOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txt_playerTwoRedBallCount"
+                style="@style/StatisticPlayerTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/txt_playerOneRedBallCount"
+                android:layout_toRightOf="@id/txt_playerOneRedBallCount" />
+
+            <TextView
+                android:id="@+id/txt_playerOneYellowBallCount"
+                style="@style/StatisticPlayerOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/statistic_red"
+                android:layout_toRightOf="@id/statistic_red" />
+
+            <TextView
+                android:id="@+id/txt_playerTwoYellowBallCount"
+                style="@style/StatisticPlayerTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/txt_playerOneYellowBallCount"
+                android:layout_toRightOf="@id/txt_playerOneYellowBallCount" />
+
+            <TextView
+                android:id="@+id/txt_playerOneBrownBallCount"
+                style="@style/StatisticPlayerOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/statistic_yellow"
+                android:layout_toRightOf="@id/statistic_yellow" />
+
+            <TextView
+                android:id="@+id/txt_playerTwoBrownBallCount"
+                style="@style/StatisticPlayerTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/txt_playerOneBrownBallCount"
+                android:layout_toRightOf="@id/txt_playerOneBrownBallCount" />
+
+            <TextView
+                android:id="@+id/txt_playerOneGreenBallCount"
+                style="@style/StatisticPlayerOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/statistic_brown"
+                android:layout_toRightOf="@id/statistic_brown" />
+
+            <TextView
+                android:id="@+id/txt_playerTwoGreenBallCount"
+                style="@style/StatisticPlayerTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/txt_playerOneGreenBallCount"
+                android:layout_toRightOf="@+id/txt_playerOneGreenBallCount" />
+
+            <TextView
+                android:id="@+id/txt_playerOneBlueBallCount"
+                style="@style/StatisticPlayerOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/statistic_green"
+                android:layout_toRightOf="@id/statistic_green" />
+
+            <TextView
+                android:id="@+id/txt_playerTwoBlueBallCount"
+                style="@style/StatisticPlayerTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/txt_playerOneBlueBallCount"
+                android:layout_toRightOf="@id/txt_playerOneBlueBallCount" />
+
+            <TextView
+                android:id="@+id/txt_playerOnePinkBallCount"
+                style="@style/StatisticPlayerOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/statistic_blue"
+                android:layout_toRightOf="@id/statistic_blue" />
+
+            <TextView
+                android:id="@+id/txt_playerTwoPinkBallCount"
+                style="@style/StatisticPlayerTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/txt_playerOnePinkBallCount"
+                android:layout_toRightOf="@id/txt_playerOnePinkBallCount" />
+
+            <TextView
+                android:id="@+id/txt_playerOneBlackBallCount"
+                style="@style/StatisticPlayerOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/statistic_pink"
+                android:layout_toRightOf="@id/statistic_pink" />
+
+            <TextView
+                android:id="@+id/txt_playerTwoBlackBallCount"
+                style="@style/StatisticPlayerTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/txt_playerOneBlackBallCount"
+                android:layout_toRightOf="@id/txt_playerOneBlackBallCount" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -18,10 +18,10 @@
 
     <string name="content_desc_brownball">Press to add the brown ball value (4) to selected players points</string>
     <string name="content_desc_yellowball">Press to add the yellow ball value (2) to selected players points</string>
-    <string name="content_desc_blackball">df</string>
-    <string name="content_desc_pinkball">fg</string>
-    <string name="content_desc_greenball">gfgfg</string>
-    <string name="content_desc_blueball">vbvbvb</string>
-    <string name="content_desc_redball">dfdf</string>
+    <string name="content_desc_blackball">Press to add the black ball value (7) to selected players points</string>
+    <string name="content_desc_pinkball">Press to add the pink ball value (6) to selected players points</string>
+    <string name="content_desc_greenball">Press to add the green ball value (3) to selected players points</string>
+    <string name="content_desc_blueball">Press to add the blue ball value (5) to selected players points</string>
+    <string name="content_desc_redball">Press to add the red ball value (1) to selected players points</string>
 
 </resources>

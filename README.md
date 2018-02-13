@@ -1,5 +1,5 @@
 # SnookerPointCounter
-Snooker point counter allpication.
+Snooker point counter application for android phones.
 
 This application helps to count the state of a snooker game. 
 You don't need to count the values of the snooker balls, 
